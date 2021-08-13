@@ -23,6 +23,56 @@ public class CashAccounts implements Serializable {
     @Column(name="holderName")
     private String holderName;
 
+    public CashAccounts(String institution, String accountType, Integer amount, String holderName) {
+        this.institution = institution;
+        this.accountType = accountType;
+        this.amount = amount;
+        this.holderName = holderName;
+    }
 
+    public CashAccounts(int id){
+        this.id = id;
+    }
 
+    public CashAccounts(){}
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getInstitution() {
+        return institution;
+    }
+
+    public void setInstitution(String institution) {
+        this.institution = institution;
+    }
+
+    public String getAccountType() {
+        return accountType;
+    }
+
+    public void setAccountType(String accountType) {
+        this.accountType = accountType;
+    }
+
+    public Integer getAmount() {
+        return amount;
+    }
+
+    public void setAmount(Integer amount) {
+        this.amount = amount;
+    }
+
+    public String getHolderName() {
+        return holderName;
+    }
+
+    public void setHolderName(String holderName) {
+        this.holderName = holderName;
+    }
 }
