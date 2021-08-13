@@ -23,18 +23,22 @@ public class Stock implements Serializable {
     @Column(name="closingPrice")
     private Integer closingPrice;
 
+    @Column(name="name")
+    private String name;
+
     public Stock(){}
 
     public Stock(int id){
         this.id = id;
     }
 
-    public Stock(int id, String ticker, int volume, int purchasePrice, int closingPrice){
+    public Stock(int id, String ticker, int volume, int purchasePrice, int closingPrice, String name){
         this.id = id;
         this.ticker = ticker;
         this.volume = volume;
         this.purchasePrice = purchasePrice;
         this.closingPrice = closingPrice;
+        this.name = name;
     }
 
     public Integer getId() {
@@ -76,4 +80,13 @@ public class Stock implements Serializable {
     public void setClosingPrice(Integer closingPrice) {
         this.closingPrice = closingPrice;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
 }
