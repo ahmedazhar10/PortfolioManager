@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS `mydb`.`Stock` (
+CREATE TABLE IF NOT EXISTS `stockschema`.`Stock` (
   `ID` INT NOT NULL,
   `ticker` VARCHAR(45) NOT NULL,
   `volume` INT NOT NULL,
