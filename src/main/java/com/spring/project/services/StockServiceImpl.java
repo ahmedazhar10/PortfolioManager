@@ -36,7 +36,7 @@ public class StockServiceImpl implements StockService{
 
     @Override
     public void addNewStock(Stock stock) {
-//        stock.setId(1);
+        stock.setId(0);
         repo.save(stock);
     }
 

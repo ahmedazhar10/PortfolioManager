@@ -1,0 +1,13 @@
+POST http://localhost:8080/api/portfoliomanager
+Content-type: application/json
+
+{
+  "closingPrice": 415,
+  "id": 6,
+  "name": "Goldman Sachs",
+  "purchasePrice": 400,
+  "ticker": "GS",
+  "volume": 100
+}
+
+###
