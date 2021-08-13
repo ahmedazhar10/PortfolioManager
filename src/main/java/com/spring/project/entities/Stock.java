@@ -37,4 +37,43 @@ public class Stock implements Serializable {
         this.closingPrice = closingPrice;
     }
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getTicker() {
+        return ticker;
+    }
+
+    public void setTicker(String ticker) {
+        this.ticker = ticker;
+    }
+
+    public Integer getVolume() {
+        return volume;
+    }
+
+    public void setVolume(Integer volume) {
+        this.volume = volume;
+    }
+
+    public Double getPurchasePrice() {
+        return purchasePrice;
+    }
+
+    public void setPurchasePrice(Double purchasePrice) {
+        this.purchasePrice = purchasePrice;
+    }
+
+    public Double getClosingPrice() {
+        return closingPrice;
+    }
+
+    public void setClosingPrice(Double closingPrice) {
+        this.closingPrice = closingPrice;
+    }
 }
