@@ -1,4 +1,4 @@
-package com.conygre.spring;
+package com.spring.project;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Profile;
