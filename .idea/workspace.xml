@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="68489d3a-bdcb-4d82-b8ee-1b0b91c36fa0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/project/PortfolioManagerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/project/PortfolioManagerApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/spring/project/entities/Etf.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/spring/project/entities/Etf.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/spring/project/entities/Future.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/spring/project/entities/Future.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/project/controller/StockController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/project/controller/StockController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/spring/project/controller/StockController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/spring/project/controller/StockController.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -60,6 +58,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="show.run.dashboard.notification" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -143,7 +142,7 @@
       <workItem from="1628878414405" duration="113000" />
       <workItem from="1628878648404" duration="7186000" />
       <workItem from="1628887107870" duration="678000" />
-      <workItem from="1629379063277" duration="423000" />
+      <workItem from="1629379063277" duration="1717000" />
     </task>
     <servers />
   </component>

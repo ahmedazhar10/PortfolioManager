@@ -25,8 +25,7 @@ public class StockController {
         return service.getStockByTicker(ticker);
     }
 
-//    @ApiOperation(value = "getAllStocks", nickname = "getAllStocks")
-    @RequestMapping(method = RequestMethod.GET)
+    @GetMapping
     public Collection<Stock> getAllStocks(){
         return service.getAllStocks();
     }
