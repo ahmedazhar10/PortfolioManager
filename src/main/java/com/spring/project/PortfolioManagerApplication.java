@@ -7,8 +7,8 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Import;
 
 @Import(com.conygre.spring.SwaggerConfig.class)
-@EnableAutoConfiguration
-@ComponentScan
+//@EnableAutoConfiguration
+@SpringBootApplication
 public class PortfolioManagerApplication {
 
 	public static void main(String[] args) {
