@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="68489d3a-bdcb-4d82-b8ee-1b0b91c36fa0" name="Default Changelist" comment="" />
+=======
+    <list default="true" id="68489d3a-bdcb-4d82-b8ee-1b0b91c36fa0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+>>>>>>> 6b12adcf8871c68bc60a127213e2dffd461b2737
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,6 +62,9 @@
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.spring.project" />
       <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RestClientSettings">
@@ -121,7 +131,7 @@
       <workItem from="1628878414405" duration="113000" />
       <workItem from="1628878648404" duration="7186000" />
       <workItem from="1628887107870" duration="678000" />
-      <workItem from="1629379063277" duration="1747000" />
+      <workItem from="1629379063277" duration="2158000" />
     </task>
     <servers />
   </component>
