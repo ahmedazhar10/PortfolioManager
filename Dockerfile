@@ -7,7 +7,7 @@ FROM openjdk:11
 RUN wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java_8.0.24-1debian9_all.deb -O /tmp/mysql-connector.deb
 RUN dpkg -i /tmp/mysql-connector.deb
 #COPY --from=compile /lib/MySpringBoot.jar app.jar
-COPY --from=compile /usr/src/mymav/en/target/*.jar app.jar
+COPY --from=compile /usr/src/mymav/en/target/PortfolioManager-1.0-SNAPSHOT.jar app.jar
 COPY src/main/resources/application-docker.properties application.properties
 
 #ARG JAR_FILE=target/my-application.jar
