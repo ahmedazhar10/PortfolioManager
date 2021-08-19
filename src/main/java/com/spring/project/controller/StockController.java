@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Collection;
 
 @RestController
-@RequestMapping("/api/portfoliomanager")
+@RequestMapping("/api/portfoliomanager/stock")
 @CrossOrigin
 public class StockController {
 
@@ -16,7 +16,7 @@ public class StockController {
     private StockService service;
 
     @RequestMapping(method = RequestMethod.GET, value = "/{ID}")
-    public Stock getStockById(@PathVariable("id") int id){
+    public Stock getStockById(@PathVariable("ID") int id){
         return service.getStockById(id);
     }
 
