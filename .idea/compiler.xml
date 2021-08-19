@@ -9,10 +9,6 @@
         <module name="MySpringBoot" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="MySpringBoot" target="11" />
-      <module name="PortfolioManager" target="11" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
