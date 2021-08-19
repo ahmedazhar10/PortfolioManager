@@ -10,7 +10,7 @@ RUN dpkg -i /tmp/mysql-connector.deb
 #COPY --from=compile /usr/src/mymav/en/target/PortfolioManager-1.0-SNAPSHOT.jar app.jar
 #COPY src/main/resources/application-docker.properties application.properties
 
-ARG JAR_FILE=target/PortfolioManager.jar
+ARG JAR_FILE=target/my-application.jar
 ADD ${JAR_FILE} app.jar
 
 EXPOSE 8080
