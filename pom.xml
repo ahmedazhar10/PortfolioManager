@@ -21,19 +21,19 @@
 	</parent>
 
 	<dependencies>
-		<!-- Required for Java 11 but breaks Java 8-->
-		<dependency>
-			<groupId>javax.xml.bind</groupId>
-			<artifactId>jaxb-api</artifactId>
-			<version>2.3.1</version>
-		</dependency>
-		<!-- Required for Java 11 but breaks Java 8-->
-		<!-- https://mvnrepository.com/artifact/org.javassist/javassist -->
-		<dependency>
-			<groupId>org.javassist</groupId>
-			<artifactId>javassist</artifactId>
-			<version>3.25.0-GA</version>
-		</dependency>
+<!--		&lt;!&ndash; Required for Java 11 but breaks Java 8&ndash;&gt;-->
+<!--		<dependency>-->
+<!--			<groupId>javax.xml.bind</groupId>-->
+<!--			<artifactId>jaxb-api</artifactId>-->
+<!--			<version>2.3.1</version>-->
+<!--		</dependency>-->
+<!--		&lt;!&ndash; Required for Java 11 but breaks Java 8&ndash;&gt;-->
+<!--		&lt;!&ndash; https://mvnrepository.com/artifact/org.javassist/javassist &ndash;&gt;-->
+<!--		<dependency>-->
+<!--			<groupId>org.javassist</groupId>-->
+<!--			<artifactId>javassist</artifactId>-->
+<!--			<version>3.25.0-GA</version>-->
+<!--		</dependency>-->
 
 
 		<dependency>
@@ -105,42 +105,42 @@
 
 	<build>
 		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.8.0</version>
-				<configuration>
-					<!-- or whatever version you use -->
-					<source>1.8</source>
-					<target>1.8</target>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-dependency-plugin</artifactId>
-				<version>3.0.0</version>
-				<executions>
-					<execution>
-						<id>copy-dependencies</id>
-						<phase>package</phase>
-						<goals>
-							<goal>copy-dependencies</goal>
-						</goals>
-						<configuration>
-							<outputDirectory>dependencies</outputDirectory>
-							<overWriteReleases>false</overWriteReleases>
-							<overWriteSnapshots>false</overWriteSnapshots>
-							<overWriteIfNewer>true</overWriteIfNewer>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
+<!--			<plugin>-->
+<!--				<groupId>org.apache.maven.plugins</groupId>-->
+<!--				<artifactId>maven-compiler-plugin</artifactId>-->
+<!--				<version>3.8.0</version>-->
+<!--				<configuration>-->
+<!--					&lt;!&ndash; or whatever version you use &ndash;&gt;-->
+<!--					<source>1.8</source>-->
+<!--					<target>1.8</target>-->
+<!--				</configuration>-->
+<!--			</plugin>-->
+<!--			<plugin>-->
+<!--				<groupId>org.apache.maven.plugins</groupId>-->
+<!--				<artifactId>maven-dependency-plugin</artifactId>-->
+<!--				<version>3.0.0</version>-->
+<!--				<executions>-->
+<!--					<execution>-->
+<!--						<id>copy-dependencies</id>-->
+<!--						<phase>package</phase>-->
+<!--						<goals>-->
+<!--							<goal>copy-dependencies</goal>-->
+<!--						</goals>-->
+<!--						<configuration>-->
+<!--							<outputDirectory>dependencies</outputDirectory>-->
+<!--							<overWriteReleases>false</overWriteReleases>-->
+<!--							<overWriteSnapshots>false</overWriteSnapshots>-->
+<!--							<overWriteIfNewer>true</overWriteIfNewer>-->
+<!--						</configuration>-->
+<!--					</execution>-->
+<!--				</executions>-->
+<!--			</plugin>-->
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-					<executable>true</executable>
-				</configuration>
+<!--				<configuration>-->
+<!--					<executable>true</executable>-->
+<!--				</configuration>-->
 			</plugin>
 		</plugins>
 	</build>
