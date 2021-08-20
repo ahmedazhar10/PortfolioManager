@@ -19,6 +19,8 @@
 -- Table structure for table `bond`
 --
 
+USE stockschema;
+
 DROP TABLE IF EXISTS `bond`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -56,8 +58,7 @@ CREATE TABLE `cashaccounts` (
   `accountType` varchar(45) NOT NULL,
   `amount` float NOT NULL,
   `holderName` varchar(45) NOT NULL,
-  PRIMARY KEY (`ID`),
-  UNIQUE KEY `ID_UNIQUE` (`ID`)
+  PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -73,7 +74,38 @@ UNLOCK TABLES;
 
 --
 -- Table structure for table `etf`
+
+DROP TABLE IF EXISTS `networth`;
+CREATE TABLE `networth` (
+  `ID` int NOT NULL AUTO_INCREMENT,
+  `cash_ID` int NOT NULL,
+  `investment_ID` int NOT NULL,
+  `user_name` varchar(45),
+  PRIMARY KEY (`ID`),
+  FOREIGN KEY (`cash_ID`) REFERENCES `cashaccounts`(`ID`),
+  FOREIGN KEY (`investment_ID`) REFERENCES `investment`(`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+LOCK TABLES `networth` WRITE;
+INSERT INTO `networth` VALUES (1,1,1,'Harry Kane'),(2,2,2,'Jonh Doe');
+UNLOCK TABLES;
 --
+
+DROP TABLE IF EXISTS `investment`;
+CREATE TABLE `investment` (
+  `ID` int NOT NULL AUTO_INCREMENT,
+  `stock_ID` int,
+  `etf_ID` int,
+  `future_ID` int,
+  `bond_ID` int,
+  PRIMARY KEY (`ID`),
+  FOREIGN KEY (`stock_ID`) REFERENCES stock(`ID`),
+  FOREIGN KEY (`etf_ID`) REFERENCES etf(`ID`),
+  FOREIGN KEY (`future_ID`) REFERENCES future(`ID`),
+  FOREIGN KEY (`bond_ID`) REFERENCES bond(`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+LOCK TABLES `investment` WRITE;
+INSERT INTO `investment` VALUES (1,1,1,1,1),(2,2,2,2,2);
+UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `etf`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -94,7 +126,7 @@ CREATE TABLE `etf` (
 
 LOCK TABLES `etf` WRITE;
 /*!40000 ALTER TABLE `etf` DISABLE KEYS */;
-INSERT INTO `etf` VALUES (1,'BDRY','Breakwave Dry Bulk Shipping ETF',266.88,382846),(2,'RETL','Direxion Daily Retail Bull 3X Shares',158.02,52651);
+INSERT INTO `etf` VALUES (1,'BDRY','Breakwave Dry Bulk Shipping ETF',266.88,3846),(2,'RETL','Direxion Daily Retail Bull 3X Shares',158.02,52651);
 /*!40000 ALTER TABLE `etf` ENABLE KEYS */;
 UNLOCK TABLES;
 
