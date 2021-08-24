@@ -69,4 +69,12 @@ public class Future implements Serializable {
     public void setMargin(Double margin) {
         this.margin = margin;
     }
+
+    public Networth getNetworth() {
+        return networth;
+    }
+
+    public void setNetworth(Networth networth) {
+        this.networth = networth;
+    }
 }

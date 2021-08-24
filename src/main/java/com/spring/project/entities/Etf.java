@@ -73,11 +73,19 @@ public class Etf implements Serializable {
         this.ytdReturn = ytdReturn;
     }
 
-    public Integer getSum() {
+    public Integer getAum() {
         return aum;
     }
 
-    public void setSum(Integer sum) {
-        this.aum = sum;
+    public void setAum(Integer aum) {
+        this.aum = aum;
+    }
+
+    public Networth getNetworth() {
+        return networth;
+    }
+
+    public void setNetworth(Networth networth) {
+        this.networth = networth;
     }
 }
