@@ -12,10 +12,6 @@ public interface CashAccountService {
 
     Collection<CashAccounts> getCashAccountByInstitution(String institution);
 
-    int getCashValue(CashAccounts ca);
-
-    String getHolderName(CashAccounts ca);
-
     void updateCashAccounts(CashAccounts ca);
 
     void deleteCashAccounts(CashAccounts ca);

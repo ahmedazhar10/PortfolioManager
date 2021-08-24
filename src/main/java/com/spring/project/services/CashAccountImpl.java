@@ -37,16 +37,6 @@ public class CashAccountImpl implements CashAccountService {
     }
 
     @Override
-    public int getCashValue(CashAccounts ca) {
-        return ca.getAmount();
-    }
-
-    @Override
-    public String getHolderName(CashAccounts ca) {
-        return ca.getHolderName();
-    }
-
-    @Override
     public void updateCashAccounts(CashAccounts ca) {
         repo.save(ca);
     }

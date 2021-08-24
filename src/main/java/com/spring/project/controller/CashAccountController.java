@@ -30,16 +30,6 @@ public class CashAccountController {
         return service.getCashAccountByInstitution(institution);
     }
 
-//    @GetMapping
-//    public int getCashValue(CashAccounts ca){
-//        return service.getCashValue(ca);
-//    }
-//
-//    @GetMapping
-//    public String getHolderName(CashAccounts ca){
-//        return service.getHolderName(ca);
-//    }
-
     @PutMapping
     public void updateCashAccounts(CashAccounts ca){
         service.updateCashAccounts(ca);
