@@ -20,18 +20,18 @@ public class Etf implements Serializable {
     @Column(name="ytdReturn")
     private Double ytdReturn;
 
-    @Column(name="sum")
-    private Integer sum;
+    @Column(name="aum")
+    private Integer aum;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name="networth_id", nullable = false)
     private Networth networth;
 
-    public Etf(String symbol, String name, Double ytdReturn, Integer sum, Networth networth) {
+    public Etf(String symbol, String name, Double ytdReturn, Integer aum, Networth networth) {
         this.symbol = symbol;
         this.name = name;
         this.ytdReturn = ytdReturn;
-        this.sum = sum;
+        this.aum = aum;
         this.networth = networth;
     }
 
@@ -74,10 +74,10 @@ public class Etf implements Serializable {
     }
 
     public Integer getSum() {
-        return sum;
+        return aum;
     }
 
     public void setSum(Integer sum) {
-        this.sum = sum;
+        this.aum = sum;
     }
 }

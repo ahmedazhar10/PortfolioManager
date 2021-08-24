@@ -16,7 +16,7 @@ public class BondController {
     private BondService service;
 
     @RequestMapping(method = RequestMethod.GET, value = "/{ID}")
-    public Bond getBondhById(@PathVariable("ID") int id){
+    public Bond getBondById(@PathVariable("ID") int id){
         return service.getBondById(id);
     }
 
