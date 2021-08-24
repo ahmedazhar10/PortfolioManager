@@ -1,6 +1,7 @@
 package com.spring.project.entities;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity @Table(name="networth")
 public class Networth {
@@ -16,6 +17,18 @@ public class Networth {
 
     @Column(name="user_name")
     private String userName;
+
+    @OneToMany(mappedBy = "networth", cascade = CascadeType.ALL)
+    private Set<Integer> stockID;
+
+    @OneToMany(mappedBy = "networth", cascade = CascadeType.ALL)
+    private Set<Integer> etfID;
+
+    @OneToMany(mappedBy = "networth", cascade = CascadeType.ALL)
+    private Set<Integer> futureID;
+
+    @OneToMany(mappedBy = "networth", cascade = CascadeType.ALL)
+    private Set<Integer> bondID;
 
     public Networth(){}
 

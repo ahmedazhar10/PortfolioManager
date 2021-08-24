@@ -19,10 +19,15 @@ public class Future {
     @Column(name="margin")
     private Double margin;
 
-    public Future(Integer contractValue, String issuer, Double margin) {
+    @ManyToOne
+    @JoinColumn(name="networth_id")
+    private Networth networth;
+
+    public Future(Integer contractValue, String issuer, Double margin, Networth networth) {
         this.contractValue = contractValue;
         this.issuer = issuer;
         this.margin = margin;
+        this.networth = networth;
     }
 
     public Future(int id){

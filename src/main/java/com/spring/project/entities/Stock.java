@@ -26,19 +26,24 @@ public class Stock implements Serializable {
     @Column(name="name")
     private String name;
 
+    @ManyToOne
+    @JoinColumn(name="networth_id")
+    private Networth networth;
+
     public Stock(){}
 
     public Stock(int id){
         this.id = id;
     }
 
-    public Stock(int id, String ticker, int volume, int purchasePrice, int closingPrice, String name){
+    public Stock(int id, String ticker, int volume, int purchasePrice, int closingPrice, String name, Networth networth){
         this.id = id;
         this.ticker = ticker;
         this.volume = volume;
         this.purchasePrice = purchasePrice;
         this.closingPrice = closingPrice;
         this.name = name;
+        this.networth = networth;
     }
 
     public Integer getId() {

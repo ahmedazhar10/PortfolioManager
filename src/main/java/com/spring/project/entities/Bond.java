@@ -26,13 +26,17 @@ public class Bond {
     @Column(name="bidPrice")
     private Double bidPrice;
 
+    @ManyToOne
+    @JoinColumn(name="networth_id")
+    private Networth networth;
 
-    public Bond(String issuer, Double coupon, Date maturityDate, Double yieldPercentage, Double bidPrice) {
+    public Bond(String issuer, Double coupon, Date maturityDate, Double yieldPercentage, Double bidPrice, Networth networth) {
         this.issuer = issuer;
         this.coupon = coupon;
         this.maturityDate = maturityDate;
         this.yieldPercentage = yieldPercentage;
         this.bidPrice = bidPrice;
+        this.networth = networth;
     }
 
     public Bond(int id){

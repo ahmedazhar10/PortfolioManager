@@ -22,11 +22,16 @@ public class Etf {
     @Column(name="sum")
     private Integer sum;
 
-    public Etf(String symbol, String name, Double ytdReturn, Integer sum) {
+    @ManyToOne
+    @JoinColumn(name="networth_id")
+    private Networth networth;
+
+    public Etf(String symbol, String name, Double ytdReturn, Integer sum, Networth networth) {
         this.symbol = symbol;
         this.name = name;
         this.ytdReturn = ytdReturn;
         this.sum = sum;
+        this.networth = networth;
     }
 
     public Etf(int id){
