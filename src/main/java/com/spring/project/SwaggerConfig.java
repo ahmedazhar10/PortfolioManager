@@ -17,7 +17,7 @@ public class SwaggerConfig {
     @Bean
     public Docket newsApi() {
         return new Docket(DocumentationType.SWAGGER_2)
-                .groupName("compactdiscs")
+                .groupName("portfoliomanager")
                 .apiInfo(apiInfo())
                 .select()
                 .paths(PathSelectors.any())
@@ -26,7 +26,7 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("Album REST API with Swagger")
+                .title("Portfolio Manager REST API with Swagger")
                 .description("This API allows you to interact with financial portfolio.")
                 //.termsOfServiceUrl("http://www.conygre.com")
 //                .contact(new Contact("Ian-team-3", "http://www.conygre.com", "nick.todd@conygre.com"))

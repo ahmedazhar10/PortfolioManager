@@ -1,10 +1,12 @@
 package com.spring.project.entities;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.io.Serializable;
+import java.text.ParseException;
 
-@Entity @Table(name="bond")
-public class Bond {
+@Entity
+@Table(name="bond")
+public class Bond implements Serializable {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -18,7 +20,7 @@ public class Bond {
     private Double coupon;
 
     @Column(name="maturityDate")
-    private Date maturityDate;
+    private String maturityDate;
 
     @Column(name="yieldPercentage")
     private Double yieldPercentage;
@@ -26,12 +28,17 @@ public class Bond {
     @Column(name="bidPrice")
     private Double bidPrice;
 
-    public Bond(String issuer, Double coupon, Date maturityDate, Double yieldPercentage, Double bidPrice) {
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name="networth_id", nullable = false)
+    private Networth networth;
+
+    public Bond(String issuer, Double coupon, String maturityDate, Double yieldPercentage, Double bidPrice, Networth networth) {
         this.issuer = issuer;
         this.coupon = coupon;
         this.maturityDate = maturityDate;
         this.yieldPercentage = yieldPercentage;
         this.bidPrice = bidPrice;
+        this.networth = networth;
     }
 
     public Bond(int id){
@@ -39,7 +46,6 @@ public class Bond {
     }
 
     public Bond(){}
-
 
     public Integer getId() {
         return id;
@@ -65,11 +71,11 @@ public class Bond {
         this.coupon = coupon;
     }
 
-    public Date getMaturityDate() {
+    public String getMaturityDate() {
         return maturityDate;
     }
 
-    public void setMaturityDate(Date maturityDate) {
+    public void setMaturityDate(String maturityDate) throws ParseException {
         this.maturityDate = maturityDate;
     }
 
@@ -89,4 +95,11 @@ public class Bond {
         this.bidPrice = bidPrice;
     }
 
+    public Networth getNetworth() {
+        return networth;
+    }
+
+    public void setNetworth(Networth networth) {
+        this.networth = networth;
+    }
 }

@@ -1,9 +1,11 @@
 package com.spring.project.entities;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
-@Entity @Table(name="future")
-public class Future {
+@Entity
+@Table(name="future")
+public class Future implements Serializable {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -19,10 +21,15 @@ public class Future {
     @Column(name="margin")
     private Double margin;
 
-    public Future(Integer contractValue, String issuer, Double margin) {
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name="networth_id", nullable = false)
+    private Networth networth;
+
+    public Future(Integer contractValue, String issuer, Double margin, Networth networth) {
         this.contractValue = contractValue;
         this.issuer = issuer;
         this.margin = margin;
+        this.networth = networth;
     }
 
     public Future(int id){
@@ -61,5 +68,13 @@ public class Future {
 
     public void setMargin(Double margin) {
         this.margin = margin;
+    }
+
+    public Networth getNetworth() {
+        return networth;
+    }
+
+    public void setNetworth(Networth networth) {
+        this.networth = networth;
     }
 }
