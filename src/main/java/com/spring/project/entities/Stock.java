@@ -95,4 +95,11 @@ public class Stock implements Serializable {
         this.name = name;
     }
 
+    public Networth getNetworth() {
+        return networth;
+    }
+
+    public void setNetworth(Networth networth) {
+        this.networth = networth;
+    }
 }

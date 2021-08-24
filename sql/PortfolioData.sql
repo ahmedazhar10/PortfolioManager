@@ -70,7 +70,7 @@ CREATE TABLE `bond` (
   `ID` int NOT NULL AUTO_INCREMENT,
   `issuer` varchar(45) NOT NULL,
   `coupon` float NOT NULL,
-  `maturityDate` date NOT NULL,
+  `maturityDate` varchar(50) NOT NULL,
   `yieldPercentage` float NOT NULL,
   `bidPrice` float NOT NULL,
   `networth_id` int NOT NULL,
