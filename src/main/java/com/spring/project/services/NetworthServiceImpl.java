@@ -18,7 +18,7 @@ public class NetworthServiceImpl implements NetworthService {
     @Override
     public Networth getNetworthById(int id) {
         Optional<Networth> networthOptional = repo.findById(id);
-        return networthOptional.orElse(null);
+        return networthOptional.get();
     }
 
     @Override
@@ -27,27 +27,17 @@ public class NetworthServiceImpl implements NetworthService {
     }
 
     @Override
-    public Networth getNetworthByCashID(int cashID) {
-        return null;
-    }
-
-    @Override
-    public Networth getNetworthByName(String userName) {
-        return null;
-    }
-
-    @Override
     public void updateNetworth(Networth networth) {
-
+        repo.save(networth);
     }
 
     @Override
     public void deleteNetworth(Networth networth) {
-
+        repo.delete(networth);
     }
 
     @Override
     public void addNewNetworth(Networth networth) {
-
+        repo.save(networth);
     }
 }

@@ -34,8 +34,9 @@ public class Networth implements Serializable {
 
     public Networth(){}
 
-    public Networth(String userName) {
+    public Networth(String userName, CashAccounts cashAccounts) {
         this.userName = userName;
+        this.cashAccounts = cashAccounts;
     }
 
     public Integer getId() {
@@ -52,5 +53,13 @@ public class Networth implements Serializable {
 
     public void setUserName(String userName) {
         this.userName = userName;
+    }
+
+    public CashAccounts getCashAccounts() {
+        return cashAccounts;
+    }
+
+    public void setCashAccounts(CashAccounts cashAccounts) {
+        this.cashAccounts = cashAccounts;
     }
 }

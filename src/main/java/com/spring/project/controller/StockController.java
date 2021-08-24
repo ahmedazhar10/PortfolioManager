@@ -20,16 +20,11 @@ public class StockController {
         return service.getStockById(id);
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/{ticker}")
-    public Collection<Stock> getStockByTicker(@PathVariable("ticker") String ticker){
-        return service.getStockByTicker(ticker);
-    }
-
     @GetMapping
     public Collection<Stock> getAllStocks(){
         return service.getAllStocks();
     }
-
+    
     @RequestMapping(method = RequestMethod.POST)
     public void addNewStock(@RequestBody Stock stock){
         service.addNewStock(stock);

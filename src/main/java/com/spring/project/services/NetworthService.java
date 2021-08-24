@@ -10,10 +10,6 @@ public interface NetworthService {
 
     Collection<Networth> getAllNetworth();
 
-    Networth getNetworthByCashID(int cashID);
-
-    Networth getNetworthByName(String userName);
-
     void updateNetworth(Networth networth);
 
     void deleteNetworth(Networth networth);
