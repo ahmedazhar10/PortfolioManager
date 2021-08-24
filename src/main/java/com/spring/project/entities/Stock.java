@@ -3,7 +3,8 @@ package com.spring.project.entities;
 import javax.persistence.*;
 import java.io.Serializable;
 
-@Entity @Table(name="Stock")
+@Entity
+@Table(name="stock")
 public class Stock implements Serializable {
 
     @Id
@@ -26,8 +27,8 @@ public class Stock implements Serializable {
     @Column(name="name")
     private String name;
 
-    @ManyToOne
-    @JoinColumn(name="networth_id")
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name="networth_id", nullable = false)
     private Networth networth;
 
     public Stock(){}

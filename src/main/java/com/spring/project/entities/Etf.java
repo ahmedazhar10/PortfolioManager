@@ -1,9 +1,10 @@
 package com.spring.project.entities;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity @Table(name="etf")
-public class Etf {
+public class Etf implements Serializable {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -22,8 +23,8 @@ public class Etf {
     @Column(name="sum")
     private Integer sum;
 
-    @ManyToOne
-    @JoinColumn(name="networth_id")
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name="networth_id", nullable = false)
     private Networth networth;
 
     public Etf(String symbol, String name, Double ytdReturn, Integer sum, Networth networth) {

@@ -3,7 +3,8 @@ package com.spring.project.entities;
 import javax.persistence.*;
 import java.io.Serializable;
 
-@Entity @Table(name="cashaccounts")
+@Entity
+@Table(name="cashaccounts")
 public class CashAccounts implements Serializable {
 
     @Id
@@ -19,9 +20,6 @@ public class CashAccounts implements Serializable {
 
     @Column(name="amount")
     private Integer amount;
-
-    @OneToOne(mappedBy = "networth")
-    private Networth networth;
 
     public CashAccounts(String institution, String accountType, Integer amount) {
         this.institution = institution;
@@ -67,11 +65,4 @@ public class CashAccounts implements Serializable {
         this.amount = amount;
     }
 
-    public Networth getNetworth() {
-        return networth;
-    }
-
-    public void setNetworth(Networth networth) {
-        this.networth = networth;
-    }
 }

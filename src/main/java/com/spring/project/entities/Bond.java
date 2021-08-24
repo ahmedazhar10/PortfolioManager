@@ -1,10 +1,12 @@
 package com.spring.project.entities;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
-@Entity @Table(name="bond")
-public class Bond {
+@Entity
+@Table(name="bond")
+public class Bond implements Serializable {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -26,8 +28,8 @@ public class Bond {
     @Column(name="bidPrice")
     private Double bidPrice;
 
-    @ManyToOne
-    @JoinColumn(name="networth_id")
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name="networth_id", nullable = false)
     private Networth networth;
 
     public Bond(String issuer, Double coupon, Date maturityDate, Double yieldPercentage, Double bidPrice, Networth networth) {
@@ -44,7 +46,6 @@ public class Bond {
     }
 
     public Bond(){}
-
 
     public Integer getId() {
         return id;
