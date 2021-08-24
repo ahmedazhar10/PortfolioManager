@@ -21,30 +21,6 @@
 
 USE stockschema;
 
-DROP TABLE IF EXISTS `bond`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `bond` (
-  `ID` int NOT NULL AUTO_INCREMENT,
-  `issuer` varchar(45) NOT NULL,
-  `coupon` float NOT NULL,
-  `maturityDate` date NOT NULL,
-  `yieldPercentage` float NOT NULL,
-  `bidPrice` float NOT NULL,
-  PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `bond`
---
-
-LOCK TABLES `bond` WRITE;
-/*!40000 ALTER TABLE `bond` DISABLE KEYS */;
-INSERT INTO `bond` VALUES (1,'Bell',8.8,'2025-11-06',8.67,100.46),(2,'BMO',6.54,'2022-08-13',7.65,120.56),(3,'BMO',5.9,'2023-09-13',4.57,99.65),(4,'Air Ca',7.5,'2022-07-19',6.78,98.23);
-/*!40000 ALTER TABLE `bond` ENABLE KEYS */;
-UNLOCK TABLES;
-
 --
 -- Table structure for table `cashaccounts`
 --
@@ -57,7 +33,6 @@ CREATE TABLE `cashaccounts` (
   `institution` varchar(45) NOT NULL,
   `accountType` varchar(45) NOT NULL,
   `amount` float NOT NULL,
-  `holderName` varchar(45) NOT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -68,7 +43,7 @@ CREATE TABLE `cashaccounts` (
 
 LOCK TABLES `cashaccounts` WRITE;
 /*!40000 ALTER TABLE `cashaccounts` DISABLE KEYS */;
-INSERT INTO `cashaccounts` VALUES (1,'Wells Fargo','Chequing',15000,'Harry Kane'),(2,'Scotia Bank','Savings',6894,'Harry Kane'),(3,'JP Morgan','Savings',9383,'Harry Kane');
+INSERT INTO `cashaccounts` VALUES (1,'Wells Fargo','Chequing',15000),(2,'Scotia Bank','Savings',6894),(3,'JP Morgan','Savings',9383),(4,'BMO','Savings',1531),(5,'RBC','Savings',7423);
 /*!40000 ALTER TABLE `cashaccounts` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -79,32 +54,39 @@ DROP TABLE IF EXISTS `networth`;
 CREATE TABLE `networth` (
   `ID` int NOT NULL AUTO_INCREMENT,
   `cash_ID` int NOT NULL,
-  `investment_ID` int NOT NULL,
   `user_name` varchar(45),
   PRIMARY KEY (`ID`),
-  FOREIGN KEY (`cash_ID`) REFERENCES `cashaccounts`(`ID`),
-  FOREIGN KEY (`investment_ID`) REFERENCES `investment`(`ID`)
+  FOREIGN KEY (`cash_ID`) REFERENCES cashaccounts(`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 LOCK TABLES `networth` WRITE;
-INSERT INTO `networth` VALUES (1,1,1,'Harry Kane'),(2,2,2,'Jonh Doe');
+INSERT INTO `networth` VALUES (1,1,'Harry Kane'),(2,2,'Jonh Doe'),(3,3,'Jane Doe'),(4,4,'Joe Biden'),(5,5,'Justin Trudeau');
 UNLOCK TABLES;
 --
 
-DROP TABLE IF EXISTS `investment`;
-CREATE TABLE `investment` (
+DROP TABLE IF EXISTS `bond`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `bond` (
   `ID` int NOT NULL AUTO_INCREMENT,
-  `stock_ID` int,
-  `etf_ID` int,
-  `future_ID` int,
-  `bond_ID` int,
-  PRIMARY KEY (`ID`),
-  FOREIGN KEY (`stock_ID`) REFERENCES stock(`ID`),
-  FOREIGN KEY (`etf_ID`) REFERENCES etf(`ID`),
-  FOREIGN KEY (`future_ID`) REFERENCES future(`ID`),
-  FOREIGN KEY (`bond_ID`) REFERENCES bond(`ID`)
+  `issuer` varchar(45) NOT NULL,
+  `coupon` float NOT NULL,
+  `maturityDate` date NOT NULL,
+  `yieldPercentage` float NOT NULL,
+  `bidPrice` float NOT NULL,
+  `networth_id` int NOT NULL,
+  FOREIGN KEY (`networth_id`) REFERENCES networth(`ID`),
+  PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-LOCK TABLES `investment` WRITE;
-INSERT INTO `investment` VALUES (1,1,1,1,1),(2,2,2,2,2);
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `bond`
+--
+
+LOCK TABLES `bond` WRITE;
+/*!40000 ALTER TABLE `bond` DISABLE KEYS */;
+INSERT INTO `bond` VALUES (1,'Bell',8.8,'2025-11-06',8.67,100.46,1),(2,'BMO',6.54,'2022-08-13',7.65,120.56,2),(3,'BMO',5.9,'2023-09-13',4.57,99.65,3),(4,'Air Ca',7.5,'2022-07-19',6.78,98.23,4);
+/*!40000 ALTER TABLE `bond` ENABLE KEYS */;
 UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `etf`;
@@ -116,6 +98,8 @@ CREATE TABLE `etf` (
   `name` varchar(45) NOT NULL,
   `ytdReturn` float NOT NULL,
   `aum` float NOT NULL,
+  `networth_id` int NOT NULL,
+  FOREIGN KEY (`networth_id`) REFERENCES networth(`ID`),
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -126,7 +110,7 @@ CREATE TABLE `etf` (
 
 LOCK TABLES `etf` WRITE;
 /*!40000 ALTER TABLE `etf` DISABLE KEYS */;
-INSERT INTO `etf` VALUES (1,'BDRY','Breakwave Dry Bulk Shipping ETF',266.88,3846),(2,'RETL','Direxion Daily Retail Bull 3X Shares',158.02,52651);
+INSERT INTO `etf` VALUES (1,'BDRY','Breakwave Dry Bulk Shipping ETF',266.88,3846,1),(2,'RETL','Direxion Daily Retail Bull 3X Shares',158.02,52651,2);
 /*!40000 ALTER TABLE `etf` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -142,6 +126,8 @@ CREATE TABLE `future` (
   `contractValue` float NOT NULL,
   `issuer` varchar(45) NOT NULL,
   `margin` float NOT NULL,
+  `networth_id` int NOT NULL,
+  FOREIGN KEY (`networth_id`) REFERENCES networth(`ID`),
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -152,7 +138,7 @@ CREATE TABLE `future` (
 
 LOCK TABLES `future` WRITE;
 /*!40000 ALTER TABLE `future` DISABLE KEYS */;
-INSERT INTO `future` VALUES (1,499875,'S&P 500',5.1),(2,164113,'30yr UST Bonds',1.7);
+INSERT INTO `future` VALUES (1,499875,'S&P 500',5.1,1),(2,164113,'30yr UST Bonds',1.7,2);
 /*!40000 ALTER TABLE `future` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -170,6 +156,8 @@ CREATE TABLE `stock` (
   `purchasePrice` float NOT NULL,
   `closingPrice` float NOT NULL,
   `name` varchar(45) NOT NULL,
+  `networth_id` int NOT NULL,
+  FOREIGN KEY (`networth_id`) REFERENCES networth(`ID`),
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -180,7 +168,7 @@ CREATE TABLE `stock` (
 
 LOCK TABLES `stock` WRITE;
 /*!40000 ALTER TABLE `stock` DISABLE KEYS */;
-INSERT INTO `stock` VALUES (1,'TSLA',20,701,772,'Tesla'),(2,'C',50,69,77,'Citigroup'),(3,'AMC',20,6,65,'AMC'),(4,'GME',80,4,168,'Gamestop'),(5,'WEN',2,24,19,'Wendy\'s');
+INSERT INTO `stock` VALUES (1,'TSLA',20,701,772,'Tesla',1),(2,'C',50,69,77,'Citigroup',2),(3,'AMC',20,6,65,'AMC',3),(4,'GME',80,4,168,'Gamestop',4),(5,'WEN',2,24,19,'Wendy\'s',5);
 /*!40000 ALTER TABLE `stock` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

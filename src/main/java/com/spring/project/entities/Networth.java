@@ -10,10 +10,12 @@ public class Networth {
     @Column(name="ID")
     private Integer id;
 
-    @Column(name="cash_ID")
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="cash_id", referencedColumnName="id")
     private Integer cashID;
 
-    @Column(name="investment_ID")
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="investment_id", referencedColumnName="id")
     private Integer investmentID;
 
     @Column(name="user_name")

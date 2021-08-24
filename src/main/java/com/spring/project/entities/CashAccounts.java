@@ -23,6 +23,9 @@ public class CashAccounts implements Serializable {
     @Column(name="holderName")
     private String holderName;
 
+    @OneToOne(mappedBy = "networth")
+    private Networth networth;
+
     public CashAccounts(String institution, String accountType, Integer amount, String holderName) {
         this.institution = institution;
         this.accountType = accountType;
@@ -74,5 +77,13 @@ public class CashAccounts implements Serializable {
 
     public void setHolderName(String holderName) {
         this.holderName = holderName;
+    }
+
+    public Networth getNetworth() {
+        return networth;
+    }
+
+    public void setNetworth(Networth networth) {
+        this.networth = networth;
     }
 }

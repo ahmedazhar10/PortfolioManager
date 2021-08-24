@@ -26,6 +26,7 @@ public class Bond {
     @Column(name="bidPrice")
     private Double bidPrice;
 
+
     public Bond(String issuer, Double coupon, Date maturityDate, Double yieldPercentage, Double bidPrice) {
         this.issuer = issuer;
         this.coupon = coupon;
