@@ -14,18 +14,13 @@ public class Networth {
     @JoinColumn(name="cash_id", referencedColumnName="id")
     private Integer cashID;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="investment_id", referencedColumnName="id")
-    private Integer investmentID;
-
     @Column(name="user_name")
     private String userName;
 
     public Networth(){}
 
-    public Networth(Integer cashID, Integer investmentID, String userName) {
+    public Networth(Integer cashID, String userName) {
         this.cashID = cashID;
-        this.investmentID = investmentID;
         this.userName = userName;
     }
 
@@ -43,14 +38,6 @@ public class Networth {
 
     public void setCashID(Integer cashID) {
         this.cashID = cashID;
-    }
-
-    public Integer getInvestmentID() {
-        return investmentID;
-    }
-
-    public void setInvestmentID(Integer investmentID) {
-        this.investmentID = investmentID;
     }
 
     public String getUserName() {

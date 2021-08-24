@@ -32,11 +32,6 @@ public class NetworthServiceImpl implements NetworthService {
     }
 
     @Override
-    public Networth getNetworthByInvestmentID(int investmentID) {
-        return null;
-    }
-
-    @Override
     public Networth getNetworthByName(String userName) {
         return null;
     }

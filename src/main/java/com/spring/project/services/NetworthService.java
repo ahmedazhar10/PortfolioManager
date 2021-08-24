@@ -12,8 +12,6 @@ public interface NetworthService {
 
     Networth getNetworthByCashID(int cashID);
 
-    Networth getNetworthByInvestmentID(int investmentID);
-
     Networth getNetworthByName(String userName);
 
 }
