@@ -17,7 +17,7 @@ public class CashAccountImpl implements CashAccountService {
     @Override
     public CashAccounts getCashAccountsById(int id) {
         Optional<CashAccounts> cashAccountsOptional = repo.findById(id);
-        return cashAccountsOptional.orElse(null);
+        return cashAccountsOptional.get();
     }
 
     @Override
@@ -25,16 +25,6 @@ public class CashAccountImpl implements CashAccountService {
         return repo.findAll();
     }
 
-    @Override
-    public Collection<CashAccounts> getCashAccountByInstitution(String institution) {
-        Collection<CashAccounts> cashAccountsCollection = repo.findAll();
-        for(CashAccounts ca : cashAccountsCollection){
-            if(!institution.equals(ca.getInstitution())){
-                cashAccountsCollection.remove(ca);
-            }
-        }
-        return cashAccountsCollection;
-    }
 
     @Override
     public void updateCashAccounts(CashAccounts ca) {

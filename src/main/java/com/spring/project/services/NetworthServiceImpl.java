@@ -35,4 +35,19 @@ public class NetworthServiceImpl implements NetworthService {
     public Networth getNetworthByName(String userName) {
         return null;
     }
+
+    @Override
+    public void updateNetworth(Networth networth) {
+
+    }
+
+    @Override
+    public void deleteNetworth(Networth networth) {
+
+    }
+
+    @Override
+    public void addNewNetworth(Networth networth) {
+
+    }
 }

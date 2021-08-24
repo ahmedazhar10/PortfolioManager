@@ -25,11 +25,6 @@ public class CashAccountController {
         return service.getAllCashAccounts();
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/{institution}")
-    public Collection<CashAccounts> getCashAccountByInstitution(@PathVariable("institution") String institution){
-        return service.getCashAccountByInstitution(institution);
-    }
-
     @PutMapping
     public void updateCashAccounts(CashAccounts ca){
         service.updateCashAccounts(ca);

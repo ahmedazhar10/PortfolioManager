@@ -8,8 +8,6 @@ public interface StockService {
 
     Stock getStockById(int id);
 
-    Collection<Stock> getStockByTicker(String ticker);
-
     Collection<Stock> getAllStocks();
 
     void addNewStock(Stock stock);

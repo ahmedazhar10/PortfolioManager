@@ -19,13 +19,7 @@ public class StockServiceImpl implements StockService{
     @Override
     public Stock getStockById(int id) {
         Optional<Stock> stockOptional = repo.findById(id);
-        return stockOptional.orElse(null);
-    }
-
-    @Override
-    public Collection<Stock> getStockByTicker(String ticker) {
-        Collection<Stock> stockCollection = repo.findByTicker(ticker);
-        return stockCollection;
+        return stockOptional.get();
     }
 
     @Override

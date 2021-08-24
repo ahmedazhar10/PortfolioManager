@@ -10,8 +10,6 @@ public interface CashAccountService {
 
     Collection<CashAccounts> getAllCashAccounts();
 
-    Collection<CashAccounts> getCashAccountByInstitution(String institution);
-
     void updateCashAccounts(CashAccounts ca);
 
     void deleteCashAccounts(CashAccounts ca);

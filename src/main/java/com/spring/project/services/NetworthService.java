@@ -14,4 +14,10 @@ public interface NetworthService {
 
     Networth getNetworthByName(String userName);
 
+    void updateNetworth(Networth networth);
+
+    void deleteNetworth(Networth networth);
+
+    void addNewNetworth(Networth networth);
+
 }
