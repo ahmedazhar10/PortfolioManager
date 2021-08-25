@@ -19,7 +19,7 @@
 -- Table structure for table `bond`
 --
 
-USE stockschema;
+USE Stockdb;
 
 --
 -- Table structure for table `cashaccounts`
