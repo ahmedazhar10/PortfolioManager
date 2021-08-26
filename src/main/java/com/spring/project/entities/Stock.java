@@ -19,10 +19,10 @@ public class Stock implements Serializable {
     private Integer volume;
 
     @Column(name="purchasePrice")
-    private Integer purchasePrice;
+    private Double purchasePrice;
 
     @Column(name="closingPrice")
-    private Integer closingPrice;
+    private Double closingPrice;
 
     @Column(name="name")
     private String name;
@@ -37,7 +37,7 @@ public class Stock implements Serializable {
         this.id = id;
     }
 
-    public Stock(int id, String ticker, int volume, int purchasePrice, int closingPrice, String name, Networth networth){
+    public Stock(int id, String ticker, int volume, double purchasePrice, double closingPrice, String name, Networth networth){
         this.id = id;
         this.ticker = ticker;
         this.volume = volume;
@@ -71,19 +71,19 @@ public class Stock implements Serializable {
         this.volume = volume;
     }
 
-    public Integer getPurchasePrice() {
+    public Double getPurchasePrice() {
         return purchasePrice;
     }
 
-    public void setPurchasePrice(Integer purchasePrice) {
+    public void setPurchasePrice(Double purchasePrice) {
         this.purchasePrice = purchasePrice;
     }
 
-    public Integer getClosingPrice() {
+    public Double getClosingPrice() {
         return closingPrice;
     }
 
-    public void setClosingPrice(Integer closingPrice) {
+    public void setClosingPrice(Double closingPrice) {
         this.closingPrice = closingPrice;
     }
 

@@ -8,6 +8,8 @@
   <component name="ChangeListManager">
     <list default="true" id="28b58c5a-3d80-44fc-8a13-876460509bd8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sql/PortfolioData.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql/PortfolioData.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/project/entities/Stock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/project/entities/Stock.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -100,6 +102,7 @@
       <workItem from="1629385769380" duration="17016000" />
       <workItem from="1629467360239" duration="9256000" />
       <workItem from="1629748726492" duration="26498000" />
+      <workItem from="1630006963574" duration="2959000" />
     </task>
     <servers />
   </component>
