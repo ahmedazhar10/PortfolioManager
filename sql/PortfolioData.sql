@@ -59,7 +59,7 @@ CREATE TABLE `networth` (
   FOREIGN KEY (`cash_ID`) REFERENCES cashaccounts(`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 LOCK TABLES `networth` WRITE;
-INSERT INTO `networth` VALUES (1,1,'Harry Kane');
+INSERT INTO `networth` VALUES (1,1,'Harry Kane'),(2,2,'p1'),(3,3,'p2'),(4,4,'p5'),(5,5,'p6');
 UNLOCK TABLES;
 --
 
@@ -169,7 +169,7 @@ CREATE TABLE `stock` (
 LOCK TABLES `stock` WRITE;
 /*!40000 ALTER TABLE `stock` DISABLE KEYS */;
 INSERT INTO `stock` VALUES
-(1,'TSLA',20,816.12,701.16,'Tesla',1),(2,'JPM',50,50.24,72.44,'Citigroup',1),(3,'AMC',20,9.36,40.31,'AMC',1),(4,'GME',80,183.75,205.22,'Gamestop',1),(5,'WEN',2,22.13,23.18,'Wendys',1),
+(1,'TSLA',20,816.12,701.16,'Tesla',1),(2,'JPM',50,50.24,72.44,'JP Morgen Chase Co',1),(3,'AMC',20,9.36,40.31,'AMC',1),(4,'GME',80,183.75,205.22,'Gamestop',1),(5,'WEN',2,22.13,23.18,'Wendys',1),
 (6,'APPL',35,145.68,147.54,'Apple',1),(7,'BAC',10,44.53,42.04,'Bank of America Corp',1),(8,'WMT',100,136.67,137.35,'Walmart Inc',1),(9,'MCD',120,242.71,236.95,'McDonalds Corp',1),(10,'BA',10,197.23,216.5,'Boeing Co',1),
 (11,'AMZN',10,701,772,'Tesla',1),(12,'C',50,3249.90,3316.00,'Amazon.com Inc',1),(13,'BBY',30,101.69,118.09,'Best Buy Co Inc',1),(14,'COST',80,370.72,449.31,'Costco',1),(15,'MSFT',2,239.42,299.09,'Microsoft',1);
 /*!40000 ALTER TABLE `stock` ENABLE KEYS */;
