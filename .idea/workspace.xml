@@ -8,7 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="28b58c5a-3d80-44fc-8a13-876460509bd8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/spring/project/entities/Stock.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/spring/project/entities/Stock.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sql/PortfolioData.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql/PortfolioData.sql" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -78,19 +78,18 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.StockControllerTest">
-    <configuration name="BondControllerTest.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.BondServiceTest">
+    <configuration name="BondServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="MySpringBoot" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.spring.project.controllerTest.*" />
+          <option name="PATTERN" value="com.spring.project.repositoryTest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.spring.project.controllerTest" />
-      <option name="MAIN_CLASS_NAME" value="com.spring.project.controllerTest.BondControllerTest" />
-      <option name="METHOD_NAME" value="contextLoads" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="com.spring.project.repositoryTest" />
+      <option name="MAIN_CLASS_NAME" value="com.spring.project.repositoryTest.BondServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -110,25 +109,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HttpRequestTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="MySpringBoot" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="HttpRequestTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="HttpRequestTest.greetingShouldReturnDefaultMessage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="MySpringBoot" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="HttpRequestTest" />
-      <option name="METHOD_NAME" value="greetingShouldReturnDefaultMessage" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="StockControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="MySpringBoot" />
       <extension name="coverage">
@@ -144,6 +124,37 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="WebMockTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MySpringBoot" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.spring.project.mockTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.spring.project.mockTest" />
+      <option name="MAIN_CLASS_NAME" value="com.spring.project.mockTest.WebMockTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WebMockTest.containStringTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MySpringBoot" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.spring.project.mockTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.spring.project.mockTest" />
+      <option name="MAIN_CLASS_NAME" value="com.spring.project.mockTest.WebMockTest" />
+      <option name="METHOD_NAME" value="containStringTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="PortfolioManagerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="MySpringBoot" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.spring.project.PortfolioManagerApplication" />
@@ -153,11 +164,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BondServiceTest" />
+        <item itemvalue="JUnit.WebMockTest" />
+        <item itemvalue="JUnit.WebMockTest.containStringTest" />
         <item itemvalue="JUnit.StockControllerTest" />
         <item itemvalue="JUnit.CashAccountControllerTest" />
-        <item itemvalue="JUnit.HttpRequestTest" />
-        <item itemvalue="JUnit.HttpRequestTest.greetingShouldReturnDefaultMessage" />
-        <item itemvalue="JUnit.BondControllerTest.contextLoads" />
       </list>
     </recent_temporary>
   </component>
@@ -193,5 +204,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/spring/project/repositoryTest/BondServiceTest.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
